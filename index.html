@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cafe de la place</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <form action="">
+        <input type="text" id="nom" placeholder="nom du produit" />
+        <input
+          type="number"
+          name="quantite"
+          id="quantite"
+          placeholder="quantite"
+        />
+        <input
+          type="number"
+          name="prixht"
+          id="prix-achat-ht"
+          placeholder="prix d'achat Ht"
+        />
+        <input
+          type="number"
+          name="prixttc"
+          id="prix-vente-ht"
+          placeholder="prix de vente HT"
+        />
+        <input type="number" name="" id="margeHt" placeholder="marge HT" />
+        <p id="ventettc"></p>
+
+        <select name="select" id="select">
+          <option value="">Type de boisson</option>
+          <option value="Alcoolisee" id="a">Boisson alcoolisée</option>
+          <option value="Non-Alcoolisee" id="na">Boisson non alcoolisée</option>
+          <option value="autre" id="autre">Autre</option>
+        </select>
+
+        <input
+          type="number"
+          name=""
+          id="degreAlcool"
+          placeholder="degré alcool en (%)"
+        />
+
+        <button id="ajouter">Ajouter</button>
+      </form>
+
+      <div class="tableau" id="tableau">
+        <!-- <table class="blueTable" style="height: 55px" width="472">
+          <thead>
+            <tr>
+              <th>nom du produit</th>
+              <th>quantite</th>
+              <th>prix d'achat Ht</th>
+              <th>prix de vente HT</th>
+              <th>prix de vente ttc</th>
+              <th>marge HT</th>
+              <th>Type de boisson</th>
+              <th>degré alcool en (%)</th>
+            </tr>
+          </thead>
+
+          
+        </table> -->
+        
+      </div>
+    </div>
+
+    <template id="infoProduct"></template>
+      <div class="newligne" id="newligne">
+       <!--  <div id="nom1"><p>nom</p><hr></div>
+        <div id="quantite1"><p>quantite</p><hr>
+           <button id="plus">+</button><button id="moin">-</button> -->
+        <!-- </div>
+        <div id="aHT"><p>prix achat ht</p><hr></div>
+        <div id="vHT"><p>prix v ht</p><hr></div>
+        <div id="vTTC"><p>prix v TTC</p><hr></div>
+        <div id="mHT"><p>Marge Ht</p><hr></div>
+        <div id="type"><p>type</p><hr></div>
+        <div id="degree"><p>degree</p><hr></div> --> 
+        <!-- <button id="delete">Delete</button>
+        <button id="modifier">modifier</button> -->
+     </div>
+    </template>
+
+    <script src="index.js"></script>
+  </body>
+</html>
