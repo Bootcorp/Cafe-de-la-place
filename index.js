@@ -33,6 +33,7 @@ function margeHT(pventeHT, pachatHT) {
 ajouter.addEventListener("click", (e) => {
   e.preventDefault();
 
+  // Fonctions calcul
   prixTTC(prixventeht.value, prixAchatht.value);
 
   let pttc = prixTTC(prixventeht.value, prixAchatht.value);
@@ -42,6 +43,8 @@ ajouter.addEventListener("click", (e) => {
   console.log(mht);
 
   count++;
+  // bouton plus /moin (ne fonctionnent pas)
+
   let btnplus = document.createElement("button");
 
   idbtnplus++;
@@ -50,6 +53,16 @@ ajouter.addEventListener("click", (e) => {
   btnplus.textContent = " +1";
   let btnmoin = document.createElement("button");
   btnmoin.id = "moin";
+  btnplus.addEventListener("click", () => {
+    let y = 1;
+    y++;
+    // p1.style.display = "none";
+    let newQ = quantite.value++;
+
+    let case1 = document.getElementById(`case${y}`);
+    case1.textContent = newQ;
+    console.log(quantite.value);
+  });
 
   let proto = {
     nom: `produit: ${nom.value}`,
@@ -61,9 +74,24 @@ ajouter.addEventListener("click", (e) => {
     marge: `marge: ${mht}`,
   };
 
+  // convertir l'objet en tableau
+
   let monTableau = Object.values(proto);
   let p1 = document.createElement("ul");
   p1.id = ` produit${count}`;
+
+  // ajout input type number
+  let numarea = document.createElement("input");
+  numarea.setAttribute("type", "number");
+  numarea.id = `numarea${count}`;
+  p1.appendChild(numarea);
+  let Q = document.getElementById(`numarea${count}`);
+
+  console.log(Q);
+
+  console.log(numarea);
+
+  // pour chaque produits ajoutés  les elements du tableau se placent dans l'<ul>
 
   for (let i = 0; i < monTableau.length; i++) {
     x++;
@@ -80,15 +108,4 @@ ajouter.addEventListener("click", (e) => {
   newligne.addEventListener("click", (e) => {
     console.log(e.target);
   });
-});
-
-btnplus.addEventListener("click", () => {
-  let y = 1;
-  y++;
-  // p1.style.display = "none";
-  let newQ = quantite.value++;
-  console.log(newQ);
-  let case1 = document.getElementById(`case${y}`);
-  case1.textContent = newQ;
-  console.log(quantite.value);
 });
